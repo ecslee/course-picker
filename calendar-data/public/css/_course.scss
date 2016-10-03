@@ -1,0 +1,57 @@
+/* COURSE LIST */
+
+#course-view {
+    padding: 0px;
+    height: 601px;
+    
+    .nav.nav-tabs {
+        height: 42px;
+        margin-top: 8px;
+        
+        li > a { 
+            color: #999;
+        }
+        
+        li.active > a {
+            color: #333;
+        }
+    }
+    
+    .tab-content {
+        width: 100%;
+        height: 550px;
+        border: 1px solid #ccc;
+        border-top: 0px;
+        padding: 0px;
+        overflow: scroll;
+    }
+    
+}
+
+.course-listing, .course-listing-selection {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    overflow-x: scroll;
+    
+    .course-name {
+        font-weight: bold;
+    }
+    
+    .glyphicon-alert {
+        color: white;
+    }
+}
+
+.course-listing:hover {
+    background-color: #eee !important;
+}
+
+.course-calendar {
+    &:hover {
+        opacity: 0.9;
+        .course-calendar-name {
+            opacity: 1;
+        }
+    }
+}

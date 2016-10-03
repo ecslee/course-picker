@@ -1,0 +1,34 @@
+<script type="text/template" id="course-tabs">
+    <div>
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active">
+                <a href="#all" aria-controls="all" role="tab" data-toggle="tab">All</a>
+            </li>
+            <li role="presentation">
+                <a href="#selected" aria-controls="selected" role="tab" data-toggle="tab">Selected</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="all"></div>
+            <div role="tabpanel" class="tab-pane" id="selected"></div>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="course-listing">
+    <div data-courseid="<%= id %>" class="course-listing<% if (isSelected) { %> course-selected<% } %>" <% if (!_.isEmpty(color)) { %>style="background-color: <%= color %>;"<% } %>>
+        <% if (conflict) { %><div class="pull-right"><span class="glyphicon glyphicon-alert"></span></div><% } %>
+        <div class="course-name"><%= name %></div>
+        <div class="course-author">Professor: <%= author %></div>
+        <div class="course-days">Days: <%= days %></div>
+        <div class="course-time">Time: <%= time %></div>
+    </div>
+</script>
+
+<script type="text/template" id="course-selections">
+    <div data-courseid="<%= id %>" class="course-listing-selection" <% if (!_.isEmpty(color)) { %>style="background-color: <%= color %>;"<% } %>>
+        <% if (conflict) { %><div class="pull-right"><span class="glyphicon glyphicon-alert"></span></div><% } %>
+        <div class="course-name"><%= name %></div>
+    </div>
+</script>

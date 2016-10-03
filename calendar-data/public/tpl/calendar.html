@@ -1,0 +1,46 @@
+<script type="text/template" id="day-header">
+    <div class="row day-header">
+        <div class="col-xs-2 timeslot"></div>
+        <div class="col-xs-2 day monday">
+            <div class="hidden-xs">Monday</div>
+            <div class="visible-xs">Mon</div>
+        </div>
+        <div class="col-xs-2 day tuesday">
+            <div class="hidden-xs">Tuesday</div>
+            <div class="visible-xs">Tue</div>
+        </div>
+        <div class="col-xs-2 day wednesday">
+            <div class="hidden-xs">Wednesday</div>
+            <div class="visible-xs">Wed</div>
+        </div>
+        <div class="col-xs-2 day thursday">
+            <div class="hidden-xs">Thursday</div>
+            <div class="visible-xs">Thu</div>
+        </div>
+        <div class="col-xs-2 day friday">
+            <div class="hidden-xs">Friday</div>
+            <div class="visible-xs">Fri</div>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="hour-row">
+    <div class="row hour">
+        <div class="col-xs-2 timeslot"><%= hourStart %></div>
+        <% _.each(schedule, function (day) { %>
+            <% if (_.isEmpty(day)) { %>
+                <div class="col-xs-2 day"></div>
+            <% } else { %>
+                <div class="col-xs-2 day course-calendar <% if (day.conflicts.length > 0) { %>conflict<% } %>"
+                     data-courseid="<%= day.id %>"
+                     style="background-color: <%= day.color %>;<% if (day.conflicts.length > 0) { %> border: 3px solid <%= day.conflicts[0].color %>; <% } %>">
+                    <% if (day.conflicts.length > 0 && _.isEmpty(day.name)) { %> 
+                        <%= day.conflicts[0].name %>
+                    <% } else { %>
+                        <%= day.name %>
+                    <% } %>
+                </div>
+            <% } %>
+        <%}) %>
+    </div>
+</script>

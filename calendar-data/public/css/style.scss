@@ -1,0 +1,13 @@
+/* BOOTSTRAP */
+@import "bootstrap";
+
+/* COURSE PICKER  */
+
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding-top: 100px;
+}
+
+@import "calendar";
+@import "course";
+@import "navbar";

@@ -1,0 +1,13 @@
+/* NAVBAR */
+
+#title {
+    margin-left: 30px;
+    
+    span.glyphicon {
+        margin-left: 10px;
+
+        &:hover {
+            color: white;
+        }
+    }
+}
